@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>../../External\glfw-3.4.bin.WIN64\include\GLFW;../../External\STB;../../External\glm-1.0.1-light\glm;../../External\glew-2.1.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>../../External\glfw-3.4.bin.WIN64\lib-vc2022;../../External\glew-2.1.0\lib\Release\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>../../External\glfw-3.4.bin.WIN64\include\GLFW;../../External\STB;../../External\glm-1.0.1-light\glm;../../External\glew-2.1.0\include;../../Assimp\include;$(IncludePath)</IncludePath>
+    <LibraryPath>../../External\glfw-3.4.bin.WIN64\lib-vc2022;../../External\glew-2.1.0\lib\Release\x64;../../Assimp\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -132,6 +132,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="S3D - Submarin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Shader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lamp.fs" />
+    <None Include="Lamp.vs" />
+    <None Include="PhongLight.fs" />
+    <None Include="PhongLight.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
