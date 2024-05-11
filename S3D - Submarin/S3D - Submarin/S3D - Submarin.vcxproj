@@ -132,13 +132,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LoaderMTL.cpp" />
-    <ClCompile Include="ObjectLoader.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="ObjectLoader.h" />
     <ClCompile Include="S3D - Submarin.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Material.h" />
+    <ClInclude Include="Mesh.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Vertex.h" />
