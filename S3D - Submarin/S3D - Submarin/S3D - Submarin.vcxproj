@@ -155,6 +155,8 @@
     <None Include="PhongLight.vs" />
     <None Include="skybox.fs" />
     <None Include="skybox.vs" />
+    <None Include="terrain.fs" />
+    <None Include="terrain.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
