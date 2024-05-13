@@ -1,22 +1,52 @@
-﻿  S3D - Submarin.cpp
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(37,13): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(39,13): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(60,15): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(64,15): warning C4305: '-=': truncation from 'double' to 'float'
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(68,15): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(72,15): warning C4305: '-=': truncation from 'double' to 'float'
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(76,15): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(80,15): warning C4305: '-=': truncation from 'double' to 'float'
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(214,24): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(214,24): warning C4244:         with
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(214,24): warning C4244:         [
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(214,24): warning C4244:             T=float
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(214,24): warning C4244:         ]
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(215,24): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(215,24): warning C4244:         with
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(215,24): warning C4244:         [
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(215,24): warning C4244:             T=float
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(215,24): warning C4244:         ]
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(223,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(224,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+﻿  LoaderMTL.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\LoaderMTL.cpp(26,8): warning C4101: 'value': unreferenced local variable
+  Mesh.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\LoaderMTL.cpp(26,8): warning C4101: 'value': unreferenced local variable
+  (compiling source file 'Mesh.cpp')
+  
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\Mesh.cpp(135,46): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\Mesh.cpp(137,44): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  ObjectLoader.h
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\LoaderMTL.cpp(26,8): warning C4101: 'value': unreferenced local variable
+  (compiling source file 'ObjectLoader.h')
+  
+  S3D - Submarin.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\LoaderMTL.cpp(26,8): warning C4101: 'value': unreferenced local variable
+  (compiling source file 'S3D%20-%20Submarin.cpp')
+  
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(277,23): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'S3D%20-%20Submarin.cpp')
+  
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(282,24): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'S3D%20-%20Submarin.cpp')
+  
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(288,23): warning C4305: '-=': truncation from 'double' to 'float'
+  (compiling source file 'S3D%20-%20Submarin.cpp')
+  
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(293,24): warning C4305: '-=': truncation from 'double' to 'float'
+  (compiling source file 'S3D%20-%20Submarin.cpp')
+  
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(308,23): warning C4305: '-=': truncation from 'double' to 'float'
+  (compiling source file 'S3D%20-%20Submarin.cpp')
+  
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(313,24): warning C4305: '-=': truncation from 'double' to 'float'
+  (compiling source file 'S3D%20-%20Submarin.cpp')
+  
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(319,23): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'S3D%20-%20Submarin.cpp')
+  
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(324,24): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'S3D%20-%20Submarin.cpp')
+  
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(452,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(453,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(462,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Shader.cpp
+  Generating Code...
   S3D - Submarin.vcxproj -> C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\x64\Debug\S3D - Submarin.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
