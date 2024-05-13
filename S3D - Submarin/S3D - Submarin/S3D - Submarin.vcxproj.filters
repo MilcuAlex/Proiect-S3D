@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{23b2ecc0-8115-4e38-bed2-b4eabd9f3295}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\Skybox">
+      <UniqueIdentifier>{44ee2f20-9cc7-4387-b38f-f2ae4122476c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="S3D - Submarin.cpp">
@@ -85,5 +91,25 @@
     <None Include="terrain.vs">
       <Filter>Resource Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\Downloads\Skybox4.jpeg">
+      <Filter>Models\Skybox</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\SkyboxUp.jpeg">
+      <Filter>Models\Skybox</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\Skybox1.jpeg">
+      <Filter>Models\Skybox</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\Skybox2.jpeg">
+      <Filter>Models\Skybox</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\Skybox3.jpeg">
+      <Filter>Models\Skybox</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\SkyboxDown.jpeg">
+      <Filter>Models\Skybox</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -1,19 +1,4 @@
-﻿  LoaderMTL.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\LoaderMTL.cpp(26,8): warning C4101: 'value': unreferenced local variable
-  Mesh.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\LoaderMTL.cpp(26,8): warning C4101: 'value': unreferenced local variable
-  (compiling source file 'Mesh.cpp')
-  
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\Mesh.cpp(135,46): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\Mesh.cpp(137,44): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-  ObjectLoader.h
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
-C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\LoaderMTL.cpp(26,8): warning C4101: 'value': unreferenced local variable
-  (compiling source file 'ObjectLoader.h')
-  
-  S3D - Submarin.cpp
+﻿  S3D - Submarin.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
 C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\LoaderMTL.cpp(26,8): warning C4101: 'value': unreferenced local variable
   (compiling source file 'S3D%20-%20Submarin.cpp')
@@ -45,8 +30,6 @@ C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(324,24
 C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(452,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(453,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(462,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Shader.cpp
-  Generating Code...
   S3D - Submarin.vcxproj -> C:\Users\milcu\Desktop\Proiect-S3D\S3D - Submarin\x64\Debug\S3D - Submarin.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

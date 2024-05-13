@@ -66,7 +66,7 @@ void changeHour(Shader& shader1, Shader& shader2, Shader& shader3, Shader& shade
 	}
 }
 
-std::vector<Mesh> Aeroport;
+//std::vector<Mesh> Aeroport;
 unsigned int GrassTex;
 unsigned int RoadTex;
 unsigned int RoofTex;
@@ -110,135 +110,135 @@ unsigned int skyboxIndices[] =
 	3, 7, 6,
 	6, 2, 3
 };
-
-void AeroportInit(std::string path)
-{
-	Mesh AcoperisHangar(path + "AcoperisHangar.obj", path);
-	Aeroport.push_back(AcoperisHangar);
-
-	Mesh Iarba(path + "Iarba.obj", path);
-	Aeroport.push_back(Iarba);
-
-	Mesh InteriorHangar(path + "InteriorHangar.obj", path);
-	Aeroport.push_back(InteriorHangar);
-
-	Mesh MetalHangare(path + "MetalHangare.obj", path);
-	Aeroport.push_back(MetalHangare);
-
-	Mesh Road(path + "Road.obj", path);
-	Aeroport.push_back(Road);
-
-	Mesh TurnBaza(path + "TurnBaza1.obj", path);
-	TurnBaza.setColor(0, glm::vec3(0.85f, 0.85f, 0.85f));
-	Aeroport.push_back(TurnBaza);
-
-	Mesh TurnBazaTexture(path + "TurnBazaTexture.obj", path);
-	Aeroport.push_back(TurnBazaTexture);
-
-	Mesh TurnVarfAlb(path + "TurnVarfAlb.obj", path);
-	TurnVarfAlb.setColor(0, glm::vec3(0.85f, 0.85f, 0.85f));
-	Aeroport.push_back(TurnVarfAlb);
-
-	Mesh TurnVarfNegru(path + "TurnVarfNegru.obj", path);
-	TurnVarfNegru.setColor(0, glm::vec3(0.0f, 0.0f, 0.0f));
-	Aeroport.push_back(TurnVarfNegru);
-
-	Mesh Fundatie(path + "Fundatie.obj", path);
-	Aeroport.push_back(Fundatie);
-
-	Mesh Copaci(path + "FrunzeCopaci.obj", path);
-	Aeroport.push_back(Copaci);
-
-	Mesh PlaneMetal(path + "PlaneMetal.obj", path);
-	Aeroport.push_back(PlaneMetal);
-
-	for (int i = 0; i < Aeroport.size(); i++)
-	{
-		if (i != 1 && i != 4 && i != 9)
-			Aeroport[i].setPosition(glm::vec3(10.f, -7.f, 10.f));
-		else
-			Aeroport[i].setPosition(glm::vec3(10.f, 0.f, 10.f));
-		Aeroport[i].setScale(glm::vec3(10.f));
-		Aeroport[i].initVAO();
-	}
-
-	GrassTex = CreateTexture(path + "Resources\\Sol.jpg");
-	RoadTex = CreateTexture(path + "Resources\\Drum.jpg");
-	RoofTex = CreateTexture(path + "Resources\\Shelter_simple_greenpanel.jpg");
-	TurnTex = CreateTexture(path + "Resources\\tower2.jpg");
-	CopacTex = CreateTexture(path + "Resources\\copac.jpg");
-	AvionTex = CreateTexture(path + "Resources\\avion.jpg");
-	TileTex = CreateTexture(path + "Resources\\Shelter_simple_whitepanel.jpg");
-	GrindaTex = CreateTexture(path + "Resources\\Shelter_simple_frame.bmp");
-}
-
-void AeroportRender(Shader& shaderA, Shader& shaderM, Shader& shaderT)
-{
-	shaderT.Activate();
-	for (int i = 0; i < Aeroport.size(); i++)
-	{
-		if (i == 0)
-		{
-			glBindTexture(GL_TEXTURE_2D, RoofTex);
-			Aeroport[i].render(&shaderT);
-		}
-		if (i == 6)
-		{
-			glBindTexture(GL_TEXTURE_2D, TurnTex);
-			Aeroport[i].render(&shaderT);
-		}
-		if (i == 2)
-		{
-			glBindTexture(GL_TEXTURE_2D, TileTex);
-			Aeroport[i].render(&shaderT);
-		}
-		if (i == 3)
-		{
-			glBindTexture(GL_TEXTURE_2D, GrindaTex);
-			Aeroport[i].render(&shaderT);
-		}
-		if (i == 10)
-		{
-			glBindTexture(GL_TEXTURE_2D, CopacTex);
-			Aeroport[i].render(&shaderT);
-		}
-		if (i == 11)
-		{
-			glBindTexture(GL_TEXTURE_2D, AvionTex);
-			Aeroport[i].render(&shaderT);
-		}
-
-		glBindTexture(GL_TEXTURE_2D, 0);
-	}
-	shaderM.Activate();
-	for (int i = 0; i < Aeroport.size(); i++)
-	{
-		if (i != 1 && i != 4 && i != 0 && i != 6 && i != 2 && i != 3 && i != 9 && i != 10 && i != 11)
-		{
-			Aeroport[i].render(&shaderM);
-		}
-	}
-
-	shaderA.Activate();
-	for (int i = 0; i < Aeroport.size(); i++)
-	{
-		if (i == 1)
-		{
-			glBindTexture(GL_TEXTURE_2D, GrassTex);
-			Aeroport[i].render(&shaderT);
-		}
-		if (i == 4)
-		{
-			glBindTexture(GL_TEXTURE_2D, RoadTex);
-			Aeroport[i].render(&shaderT);
-		}
-		if (i == 9)
-		{
-			glBindTexture(GL_TEXTURE_2D, RoadTex);
-			Aeroport[i].render(&shaderT);
-		}
-	}
-}
+//
+//void AeroportInit(std::string path)
+//{
+//	Mesh AcoperisHangar(path + "AcoperisHangar.obj", path);
+//	Aeroport.push_back(AcoperisHangar);
+//
+//	Mesh Iarba(path + "Iarba.obj", path);
+//	Aeroport.push_back(Iarba);
+//
+//	Mesh InteriorHangar(path + "InteriorHangar.obj", path);
+//	Aeroport.push_back(InteriorHangar);
+//
+//	Mesh MetalHangare(path + "MetalHangare.obj", path);
+//	Aeroport.push_back(MetalHangare);
+//
+//	Mesh Road(path + "Road.obj", path);
+//	Aeroport.push_back(Road);
+//
+//	Mesh TurnBaza(path + "TurnBaza1.obj", path);
+//	TurnBaza.setColor(0, glm::vec3(0.85f, 0.85f, 0.85f));
+//	Aeroport.push_back(TurnBaza);
+//
+//	Mesh TurnBazaTexture(path + "TurnBazaTexture.obj", path);
+//	Aeroport.push_back(TurnBazaTexture);
+//
+//	Mesh TurnVarfAlb(path + "TurnVarfAlb.obj", path);
+//	TurnVarfAlb.setColor(0, glm::vec3(0.85f, 0.85f, 0.85f));
+//	Aeroport.push_back(TurnVarfAlb);
+//
+//	Mesh TurnVarfNegru(path + "TurnVarfNegru.obj", path);
+//	TurnVarfNegru.setColor(0, glm::vec3(0.0f, 0.0f, 0.0f));
+//	Aeroport.push_back(TurnVarfNegru);
+//
+//	Mesh Fundatie(path + "Fundatie.obj", path);
+//	Aeroport.push_back(Fundatie);
+//
+//	Mesh Copaci(path + "FrunzeCopaci.obj", path);
+//	Aeroport.push_back(Copaci);
+//
+//	Mesh PlaneMetal(path + "PlaneMetal.obj", path);
+//	Aeroport.push_back(PlaneMetal);
+//
+//	for (int i = 0; i < Aeroport.size(); i++)
+//	{
+//		if (i != 1 && i != 4 && i != 9)
+//			Aeroport[i].setPosition(glm::vec3(10.f, -7.f, 10.f));
+//		else
+//			Aeroport[i].setPosition(glm::vec3(10.f, 0.f, 10.f));
+//		Aeroport[i].setScale(glm::vec3(10.f));
+//		Aeroport[i].initVAO();
+//	}
+//
+//	GrassTex = CreateTexture(path + "Resources\\Sol.jpg");
+//	RoadTex = CreateTexture(path + "Resources\\Drum.jpg");
+//	RoofTex = CreateTexture(path + "Resources\\Shelter_simple_greenpanel.jpg");
+//	TurnTex = CreateTexture(path + "Resources\\tower2.jpg");
+//	CopacTex = CreateTexture(path + "Resources\\copac.jpg");
+//	AvionTex = CreateTexture(path + "Resources\\avion.jpg");
+//	TileTex = CreateTexture(path + "Resources\\Shelter_simple_whitepanel.jpg");
+//	GrindaTex = CreateTexture(path + "Resources\\Shelter_simple_frame.bmp");
+//}
+//
+//void AeroportRender(Shader& shaderA, Shader& shaderM, Shader& shaderT)
+//{
+//	shaderT.Activate();
+//	for (int i = 0; i < Aeroport.size(); i++)
+//	{
+//		if (i == 0)
+//		{
+//			glBindTexture(GL_TEXTURE_2D, RoofTex);
+//			Aeroport[i].render(&shaderT);
+//		}
+//		if (i == 6)
+//		{
+//			glBindTexture(GL_TEXTURE_2D, TurnTex);
+//			Aeroport[i].render(&shaderT);
+//		}
+//		if (i == 2)
+//		{
+//			glBindTexture(GL_TEXTURE_2D, TileTex);
+//			Aeroport[i].render(&shaderT);
+//		}
+//		if (i == 3)
+//		{
+//			glBindTexture(GL_TEXTURE_2D, GrindaTex);
+//			Aeroport[i].render(&shaderT);
+//		}
+//		if (i == 10)
+//		{
+//			glBindTexture(GL_TEXTURE_2D, CopacTex);
+//			Aeroport[i].render(&shaderT);
+//		}
+//		if (i == 11)
+//		{
+//			glBindTexture(GL_TEXTURE_2D, AvionTex);
+//			Aeroport[i].render(&shaderT);
+//		}
+//
+//		glBindTexture(GL_TEXTURE_2D, 0);
+//	}
+//	shaderM.Activate();
+//	for (int i = 0; i < Aeroport.size(); i++)
+//	{
+//		if (i != 1 && i != 4 && i != 0 && i != 6 && i != 2 && i != 3 && i != 9 && i != 10 && i != 11)
+//		{
+//			Aeroport[i].render(&shaderM);
+//		}
+//	}
+//
+//	shaderA.Activate();
+//	for (int i = 0; i < Aeroport.size(); i++)
+//	{
+//		if (i == 1)
+//		{
+//			glBindTexture(GL_TEXTURE_2D, GrassTex);
+//			Aeroport[i].render(&shaderT);
+//		}
+//		if (i == 4)
+//		{
+//			glBindTexture(GL_TEXTURE_2D, RoadTex);
+//			Aeroport[i].render(&shaderT);
+//		}
+//		if (i == 9)
+//		{
+//			glBindTexture(GL_TEXTURE_2D, RoadTex);
+//			Aeroport[i].render(&shaderT);
+//		}
+//	}
+//}
 
 
 Camera* pCamera = nullptr;
@@ -389,7 +389,7 @@ int main()
 
 	//Paths
 	std::string ShadersPath = currentPath + "\\Shaders\\";
-	std::string SkyBoxPath = currentPath + "\\Models\\skybox\\";
+	std::string SkyBoxPath = currentPath + "\\Models\\Skybox\\";
 	std::string PlanePath = currentPath + "\\Models\\Plane\\";
 	std::string AirportPath = currentPath + "\\Models\\Airport\\";
 	std::string MapPath = currentPath + "\\Models\\Map\\";
@@ -398,7 +398,7 @@ int main()
 	//Shaders
 	Shader programShader((ShadersPath + "default.vs").c_str(), (ShadersPath + "default.fs").c_str());
 	Shader skyboxShader((ShadersPath + "skybox.vs").c_str(), (ShadersPath + "skybox.fs").c_str());
-	Shader airportShader((ShadersPath + "airport.vs").c_str(), (ShadersPath + "airport.fs").c_str());
+	//Shader airportShader((ShadersPath + "airport.vs").c_str(), (ShadersPath + "airport.fs").c_str());
 	Shader lampShader((ShadersPath + "Lamp.vs").c_str(), (ShadersPath + "Lamp.fs").c_str());
 	Shader terrainShader((ShadersPath + "terrain.vs").c_str(), (ShadersPath + "terrain.fs").c_str());
 
@@ -438,7 +438,7 @@ int main()
 	// Creates the cubemap texture object
 	unsigned int cubemapTexture = LoadSkybox(facesCubemap);
 	int floorTexture = CreateTexture(MapPath + "Map.jpg");
-	AeroportInit(AirportPath);
+	//AeroportInit(AirportPath);
 
 	float deltaTime = 0.f;
 	float lastFrame = 0.f;
@@ -535,7 +535,7 @@ int main()
 		pCamera->SetPosition(pCamera->GetPosition() + glm::vec3(0.0f, glm::radians((pCamera->frontTilt - 13.f) / 1.5f) * 50.f, 0.0f));
 		pCamera->pitch = -pCamera->frontTilt;
 		pCamera->yaw = -((float)Avion.getRotation().y + (float)pCamera->offset - 90.f);
-		changeHour(terrainShader, skyboxShader, programShader, airportShader);
+		//changeHour(terrainShader, skyboxShader, programShader, airportShader);
 
 		glm::mat4 projection = pCamera->GetProjectionMatrix();
 		glm::mat4 view = pCamera->GetViewMatrix();
@@ -560,14 +560,14 @@ int main()
 		glBindVertexArray(lightVAO);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
-		airportShader.Activate();
+		/*airportShader.Activate();
 		airportShader.SetVec3("lightPos", lightPos);
 		airportShader.SetVec3("lightColor", glm::vec3(0.6f));
 		airportShader.SetVec3("viewPos", pCamera->GetPosition());
 
 		airportShader.SetMat4("projection", projection);
 		airportShader.SetMat4("view", view);
-		AeroportRender(airportShader, programShader, terrainShader);
+		AeroportRender(airportShader, programShader, terrainShader);*/
 
 		terrainShader.Activate();
 		terrainShader.SetMat4("projection", projection);
@@ -610,7 +610,7 @@ int main()
 
 	programShader.Delete();
 	skyboxShader.Delete();
-	airportShader.Delete();
+	//airportShader.Delete();
 	lampShader.Delete();
 	terrainShader.Delete();
 
