@@ -273,7 +273,7 @@ int main()
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	// glfw window creation
-	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "FlyWithPlane", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Submarine", NULL, NULL);
 	if (window == NULL) {
 		std::cout << "Failed to create GLFW window" << std::endl;
 		glfwTerminate();
@@ -378,66 +378,66 @@ int main()
 	pCamera = new Camera(SCR_WIDTH, SCR_HEIGHT, glm::vec3(0.0, 0.0, 2.0));
 
 
-	wchar_t buffer[MAX_PATH];
-	GetCurrentDirectoryW(MAX_PATH, buffer);
+	/*wchar_t buffer[MAX_PATH];
+	GetCurrentDirectoryW(MAX_PATH, buffer);*/
 
-	std::wstring executablePath(buffer);
-	std::wstring wscurrentPath = executablePath.substr(0, executablePath.find_last_of(L"\\/"));
+	//std::wstring executablePath(buffer);
+	//std::wstring wscurrentPath = executablePath.substr(0, executablePath.find_last_of(L"\\/"));
 
-	std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
-	std::string currentPath = converter.to_bytes(wscurrentPath);
-
-	//Paths
-	std::string ShadersPath = currentPath + "\\Shaders\\";
-	std::string SkyBoxPath = currentPath + "\\Models\\Skybox\\";
-	std::string PlanePath = currentPath + "\\Models\\Plane\\";
-	std::string AirportPath = currentPath + "\\Models\\Airport\\";
-	std::string MapPath = currentPath + "\\Models\\Map\\";
+	//std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+	//std::string currentPath = converter.to_bytes(wscurrentPath);
+	//
+	////Paths
+	//std::string ShadersPath = currentPath + "\\Shaders\\";
+	//std::string SkyBoxPath = currentPath + "\\Models\\Skybox\\";
+	//std::string PlanePath = currentPath + "\\Models\\Plane\\";
+	//std::string AirportPath = currentPath + "\\Models\\Airport\\";
+	//std::string MapPath = currentPath + "\\Models\\Map\\";
 
 
 	//Shaders
-	Shader programShader((ShadersPath + "default.vs").c_str(), (ShadersPath + "default.fs").c_str());
-	Shader skyboxShader((ShadersPath + "skybox.vs").c_str(), (ShadersPath + "skybox.fs").c_str());
+	Shader programShader("default.vs", "default.fs");
+	Shader skyboxShader("skybox.vs", "skybox.fs");
 	//Shader airportShader((ShadersPath + "airport.vs").c_str(), (ShadersPath + "airport.fs").c_str());
-	Shader lampShader((ShadersPath + "Lamp.vs").c_str(), (ShadersPath + "Lamp.fs").c_str());
-	Shader terrainShader((ShadersPath + "terrain.vs").c_str(), (ShadersPath + "terrain.fs").c_str());
+	Shader lampShader("Lamp.vs", "Lamp.fs");
+	Shader terrainShader("terrain.vs", "terrain.fs");
 
 
 	// Take care of all the light related things
 	glm::vec4 lightColor = glm::vec4(0.6f, 0.6f, 0.6f, 1.0f);
 
 
-	terrainShader.Activate();
-	terrainShader.SetVec3("lightColor", lightColor);
+	/*terrainShader.Activate();
+	terrainShader.SetVec3("lightColor", lightColor);*/
 
-	Mesh Avion(PlanePath + "Plane.obj", PlanePath);
+	/*Mesh Avion(PlanePath + "Plane.obj", PlanePath);
 	Avion.setPosition(glm::vec3(0.f));
 	Avion.setColor(0, glm::vec3(0.45f, 0.0f, 0.0f));
 	Avion.setColor(1, glm::vec3(0.1f, 0.1f, 0.1f));
 	Avion.setColor(2, glm::vec3(0.5f, 0.5f, 0.5f));
 	Avion.setRotation(glm::vec3(15.0f, 180.0f, 0.f));
 	Avion.setPosition(glm::vec3(0.0f, 1.8f, -1.5f));
-	Avion.initVAO();
+	Avion.initVAO();*/
 
-	Mesh Map(MapPath + "Map.obj", MapPath);
-	Map.setScale(glm::vec3(0.1f, 0.1f, 0.1f));
-	Map.setPosition(glm::vec3(1000.0f, -165.0f, -80.0f));
-	Map.initVAO();
+	//Mesh Map(MapPath + "Map.obj", MapPath);
+	//Map.setScale(glm::vec3(0.1f, 0.1f, 0.1f));
+	//Map.setPosition(glm::vec3(1000.0f, -165.0f, -80.0f));
+	//Map.initVAO();
 
 	// All the faces of the cubemap (make sure they are in this exact order)
 	std::vector<std::string> facesCubemap =
 	{
-		SkyBoxPath + "px.png",
-		SkyBoxPath + "nx.png",
-		SkyBoxPath + "py.png",
-		SkyBoxPath + "ny.png",
-		SkyBoxPath + "pz.png",
-		SkyBoxPath + "nz.png"
+		"Skybox4.bmp",
+		"SkyboxDown.bmp",
+		"SkyboxUp.bmp",
+		"Skybox2.bmp",
+		"Skybox3.bmp",
+		"Skybox1.bmp"
 	};
 
 	// Creates the cubemap texture object
 	unsigned int cubemapTexture = LoadSkybox(facesCubemap);
-	int floorTexture = CreateTexture(MapPath + "Map.jpg");
+	//int floorTexture = CreateTexture(MapPath + "Map.jpg");
 	//AeroportInit(AirportPath);
 
 	float deltaTime = 0.f;
@@ -452,9 +452,9 @@ int main()
 		deltaTime = FrameStart - lastFrame;
 		lastFrame = FrameStart;
 
-		float currentAltitude = Avion.getPosition().y;
-		deltaAltitude = (pCamera->speed - 0.5f) * 2.f;
-		float currentTilt = Avion.getRotation().y;
+		/*float currentAltitude = Avion.getPosition().y;*/
+		//deltaAltitude = (pCamera->speed - 0.5f) * 2.f;
+		//float currentTilt = Avion.getRotation().y;
 		//changeHour(shader, terrainShader);
 
 		float clearR = 0.07f + skylight / 2.f - 0.1f;
@@ -462,7 +462,7 @@ int main()
 		float clearB = 0.17 + skylight / 2.f - 0.1f;
 		glClearColor(clearR, clearG, clearB, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		if (Avion.getPosition().y < 0.0f)
+	/*	if (Avion.getPosition().y < 0.0f)
 		{
 			Avion.setPosition(glm::vec3(Avion.getPosition().x, 0.0f, Avion.getPosition().z));
 		}
@@ -519,36 +519,36 @@ int main()
 				Xrot = deltaAltitude * 5.f * glm::cos(glm::radians(Avion.getRotation().y));
 				Zrot = deltaAltitude * 5.f * -glm::sin(glm::radians(Avion.getRotation().y));
 			}
-		}
+		}*/
 
-		float angle = glm::abs(Xrot) + glm::abs(Zrot);
+		/*float angle = glm::abs(Xrot) + glm::abs(Zrot);
 		if (Avion.getRotation().y > 0.f)
 			angle *= 4;
 		else
 			angle /= 2.f;
 		float momentum = glm::abs(glm::cos(glm::radians(angle)));
 		Avion.setPosition(glm::vec3(Avion.getPosition() + glm::vec3(pCamera->speed * momentum * 15.f * glm::sin(glm::radians(Avion.getRotation().y)), 0.0f, pCamera->speed * momentum * 15.f * glm::cos(glm::radians(Avion.getRotation().y)))));
-		Avion.setRotation(glm::vec3(0.f, Avion.getRotation().y, 0.f) + glm::vec3(Xrot, 0.0f, Zrot));
+		Avion.setRotation(glm::vec3(0.f, Avion.getRotation().y, 0.f) + glm::vec3(Xrot, 0.0f, Zrot));*/
 
-		processInput(window, pCamera, deltaTime, &Avion);
-		pCamera->SetPosition(glm::vec3(Avion.getPosition() + glm::vec3(-sin(glm::radians(Avion.getRotation().y + pCamera->offset)) * 50.f, 15.0f, -cos(glm::radians(Avion.getRotation().y + pCamera->offset)) * 50.f)));
+		//processInput(window, pCamera, deltaTime, &Avion);
+		pCamera->SetPosition(glm::vec3(/*Avion.getPosition() +*/ glm::vec3(-sin(glm::radians(/*Avion.getRotation().y +*/ pCamera->offset)) * 50.f, 15.0f, -cos(glm::radians(/*Avion.getRotation().y*/ + pCamera->offset)) * 50.f)));
 		pCamera->SetPosition(pCamera->GetPosition() + glm::vec3(0.0f, glm::radians((pCamera->frontTilt - 13.f) / 1.5f) * 50.f, 0.0f));
 		pCamera->pitch = -pCamera->frontTilt;
-		pCamera->yaw = -((float)Avion.getRotation().y + (float)pCamera->offset - 90.f);
+		pCamera->yaw = -(/*(float)Avion.getRotation().y +*/ (float)pCamera->offset - 90.f);
 		//changeHour(terrainShader, skyboxShader, programShader, airportShader);
 
 		glm::mat4 projection = pCamera->GetProjectionMatrix();
 		glm::mat4 view = pCamera->GetViewMatrix();
 		pCamera->UpdateCameraVectors();
 
-		programShader.Activate();
+		/*programShader.Activate();
 		programShader.SetVec3("lightPos", lightPos);
 		programShader.SetVec3("lightColor", glm::vec3(0.6f));
 		programShader.SetVec3("viewPos", pCamera->GetPosition());
 
 		programShader.SetMat4("projection", projection);
-		programShader.SetMat4("view", view);
-		Avion.render(&programShader);
+		programShader.SetMat4("view", view);*/
+		//Avion.render(&programShader);
 
 		lampShader.Activate();
 		lampShader.SetMat4("projection", projection);
@@ -569,12 +569,12 @@ int main()
 		airportShader.SetMat4("view", view);
 		AeroportRender(airportShader, programShader, terrainShader);*/
 
-		terrainShader.Activate();
-		terrainShader.SetMat4("projection", projection);
-		terrainShader.SetMat4("view", view);
-		glBindTexture(GL_TEXTURE_2D, floorTexture);
-		Map.render(&terrainShader);
-		glBindTexture(GL_TEXTURE_2D, 0);
+		//terrainShader.Activate();
+		//terrainShader.SetMat4("projection", projection);
+		//terrainShader.SetMat4("view", view);
+		//glBindTexture(GL_TEXTURE_2D, floorTexture);
+		//Map.render(&terrainShader);
+		//glBindTexture(GL_TEXTURE_2D, 0);
 
 		//render skybox
 		glDepthFunc(GL_LEQUAL);

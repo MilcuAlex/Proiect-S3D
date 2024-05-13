@@ -159,12 +159,12 @@
     <None Include="terrain.vs" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\Skybox1.jpeg" />
-    <Image Include="..\..\..\..\Downloads\Skybox2.jpeg" />
-    <Image Include="..\..\..\..\Downloads\Skybox3.jpeg" />
-    <Image Include="..\..\..\..\Downloads\Skybox4.jpeg" />
-    <Image Include="..\..\..\..\Downloads\SkyboxDown.jpeg" />
-    <Image Include="..\..\..\..\Downloads\SkyboxUp.jpeg" />
+    <Image Include="Skybox1.bmp" />
+    <Image Include="Skybox2.bmp" />
+    <Image Include="Skybox3.bmp" />
+    <Image Include="Skybox4.bmp" />
+    <Image Include="SkyboxDown.bmp" />
+    <Image Include="SkyboxUp.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

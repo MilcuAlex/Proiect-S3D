@@ -16,13 +16,13 @@ uniform vec3 objectColor;
 
 void main()
 {
-    vec3 ambient = Ka * lightColor;
-    vec3 norm = normalize(Normal);
-    vec3 lightDir = normalize(lightPos - FragPos);
-    float diff = Kd * max(dot(norm, lightDir), 0.0);
-    vec3 viewDir = normalize(viewPos - FragPos);
-    vec3 reflectDir = reflect(-lightDir, norm);
-    float spec = Ks * pow(max(dot(viewDir, reflectDir), 0.0), n);
-    vec3 result = (ambient + diff + spec) * objectColor;
-    FragColor = vec4(result, 1.0);
+vec3 ambient = Ka * lightColor;
+vec3 norm = normalize(Normal);
+vec3 lightDir = normalize(lightPos - FragPos);
+float diff = Kd * max(dot(norm, lightDir), 0.0);
+vec3 viewDir = normalize(viewPos - FragPos);
+vec3 reflectDir = reflect(-lightDir, norm);
+float spec = Ks * pow(max(dot(viewDir, reflectDir), 0.0), n);
+vec3 result = (ambient + diff + spec) * objectColor;
+FragColor = vec4(result, 1.0);
 }

@@ -19,6 +19,9 @@
     <Filter Include="Models\Skybox">
       <UniqueIdentifier>{44ee2f20-9cc7-4387-b38f-f2ae4122476c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{1d52e45a-1428-413f-b249-f14a14288355}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="S3D - Submarin.cpp">
@@ -61,54 +64,54 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Lamp.fs">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Lamp.vs">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="PhongLight.fs">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="PhongLight.vs">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="default.fs">
-      <Filter>Resource Files</Filter>
+      <Filter>Shaders</Filter>
     </None>
     <None Include="default.vs">
-      <Filter>Resource Files</Filter>
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Lamp.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Lamp.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="PhongLight.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="PhongLight.vs">
+      <Filter>Shaders</Filter>
     </None>
     <None Include="skybox.fs">
-      <Filter>Resource Files</Filter>
+      <Filter>Shaders</Filter>
     </None>
     <None Include="skybox.vs">
-      <Filter>Resource Files</Filter>
+      <Filter>Shaders</Filter>
     </None>
     <None Include="terrain.fs">
-      <Filter>Resource Files</Filter>
+      <Filter>Shaders</Filter>
     </None>
     <None Include="terrain.vs">
-      <Filter>Resource Files</Filter>
+      <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\Skybox4.jpeg">
+    <Image Include="Skybox1.bmp">
       <Filter>Models\Skybox</Filter>
     </Image>
-    <Image Include="..\..\..\..\Downloads\SkyboxUp.jpeg">
+    <Image Include="Skybox2.bmp">
       <Filter>Models\Skybox</Filter>
     </Image>
-    <Image Include="..\..\..\..\Downloads\Skybox1.jpeg">
+    <Image Include="Skybox3.bmp">
       <Filter>Models\Skybox</Filter>
     </Image>
-    <Image Include="..\..\..\..\Downloads\Skybox2.jpeg">
+    <Image Include="Skybox4.bmp">
       <Filter>Models\Skybox</Filter>
     </Image>
-    <Image Include="..\..\..\..\Downloads\Skybox3.jpeg">
+    <Image Include="SkyboxDown.bmp">
       <Filter>Models\Skybox</Filter>
     </Image>
-    <Image Include="..\..\..\..\Downloads\SkyboxDown.jpeg">
+    <Image Include="SkyboxUp.bmp">
       <Filter>Models\Skybox</Filter>
     </Image>
   </ItemGroup>

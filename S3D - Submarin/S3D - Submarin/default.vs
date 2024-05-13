@@ -21,13 +21,13 @@ uniform mat4 projection;
 
 void main()
 {
-	vs_FragPos = vec4(model * vec4(aPos, 1.0f)).xyz;
-	vs_Color = aColor;
-	vs_TexCoord = vec2(aTexCoord.x, aTexCoord.y * -1.f);
-	vs_Normal = mat3(model) * aNormal;
-	vs_Ambient = aAmbient;
-	vs_Diffuse = aDiffuse;
-	vs_Specular = aSpecular;
+vs_FragPos = vec4(model * vec4(aPos, 1.0f)).xyz;
+vs_Color = aColor;
+vs_TexCoord = vec2(aTexCoord.x, aTexCoord.y * -1.f);
+vs_Normal = mat3(model) * aNormal;
+vs_Ambient = aAmbient;
+vs_Diffuse = aDiffuse;
+vs_Specular = aSpecular;
 
-	gl_Position = projection * view * vec4(vs_FragPos, 1.0f);
+gl_Position = projection * view * vec4(vs_FragPos, 1.0f);
 }

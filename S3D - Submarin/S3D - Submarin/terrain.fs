@@ -7,8 +7,8 @@ uniform vec3 lightColor;
 
 void main()
 {
-	vec4 texColor = texture(texture1, TexCoords);
-	if (texColor.a < 0.1)
-		discard;
-	FragColor = texColor * vec4(lightColor, 1.0f);
+vec4 texColor = texture(texture1, TexCoords);
+if (texColor.a < 0.1)
+discard;
+FragColor = texColor * vec4(lightColor, 1.0f);
 }
