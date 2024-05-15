@@ -17,54 +17,54 @@ const unsigned int SCR_HEIGHT = 1000;
 
 float skylight;
 glm::vec3 lightPos = glm::vec3(3000.0f, 1000.0f, 8000.0f);
-void changeHour(Shader& shader1, Shader& shader2, Shader& shader3, Shader& shader4)
-{
-	static glm::vec3 value(0.6f);
-	skylight = value.x;
-	if (Darker == true)
-	{
-		if (value.x > 0.2f)
-		{
-			value -= glm::vec3(0.05f);
-			shader1.Activate();
-			shader1.SetVec3("lightColor", value);
-			shader2.Activate();
-			shader2.SetVec3("lightColor", value);
-			shader3.Activate();
-			shader3.SetVec3("lightColor", value);
-			shader4.Activate();
-			shader4.SetVec3("lightColor", value);
-
-			if (lightPos.z >= 0)
-				lightPos -= glm::vec3(0.0f, -1000.0f, 2800.0f);
-			else
-				lightPos -= glm::vec3(0.0f, 1000.0f, 1750.0f);
-		}
-		Darker = false;
-	}
-
-	if (Lighter == true)
-	{
-		if (value.x < 0.6f)
-		{
-			value += glm::vec3(0.05f);
-			shader1.Activate();
-			shader1.SetVec3("lightColor", value);
-			shader2.Activate();
-			shader2.SetVec3("lightColor", value);
-			shader3.Activate();
-			shader3.SetVec3("lightColor", value);
-			shader4.Activate();
-			shader4.SetVec3("lightColor", value);
-
-			if (lightPos.z < 0)
-				lightPos += glm::vec3(0.0f, +1000.0f, 2800.0f);
-			else
-				lightPos += glm::vec3(0.0f, -1000.0f, 1750.0f);
-		}
-		Lighter = false;
-	}
-}
+//void changeHour(Shader& shader1, Shader& shader2, Shader& shader3, Shader& shader4)
+//{
+//	static glm::vec3 value(0.6f);
+//	skylight = value.x;
+//	if (Darker == true)
+//	{
+//		if (value.x > 0.2f)
+//		{
+//			value -= glm::vec3(0.05f);
+//			shader1.Activate();
+//			shader1.SetVec3("lightColor", value);
+//			shader2.Activate();
+//			shader2.SetVec3("lightColor", value);
+//			shader3.Activate();
+//			shader3.SetVec3("lightColor", value);
+//			shader4.Activate();
+//			shader4.SetVec3("lightColor", value);
+//
+//			if (lightPos.z >= 0)
+//				lightPos -= glm::vec3(0.0f, -1000.0f, 2800.0f);
+//			else
+//				lightPos -= glm::vec3(0.0f, 1000.0f, 1750.0f);
+//		}
+//		Darker = false;
+//	}
+//
+//	if (Lighter == true)
+//	{
+//		if (value.x < 0.6f)
+//		{
+//			value += glm::vec3(0.05f);
+//			shader1.Activate();
+//			shader1.SetVec3("lightColor", value);
+//			shader2.Activate();
+//			shader2.SetVec3("lightColor", value);
+//			shader3.Activate();
+//			shader3.SetVec3("lightColor", value);
+//			shader4.Activate();
+//			shader4.SetVec3("lightColor", value);
+//
+//			if (lightPos.z < 0)
+//				lightPos += glm::vec3(0.0f, +1000.0f, 2800.0f);
+//			else
+//				lightPos += glm::vec3(0.0f, -1000.0f, 1750.0f);
+//		}
+//		Lighter = false;
+//	}
+//}
 
 //std::vector<Mesh> Aeroport;
 unsigned int GrassTex;
@@ -390,7 +390,7 @@ int main()
 	////Paths
 	//std::string ShadersPath = currentPath + "\\Shaders\\";
 	//std::string SkyBoxPath = currentPath + "\\Models\\Skybox\\";
-	//std::string PlanePath = currentPath + "\\Models\\Plane\\";
+	std::string PlanePath = "..\\..\\Models\\Submarine_object\\";
 	//std::string AirportPath = currentPath + "\\Models\\Airport\\";
 	//std::string MapPath = currentPath + "\\Models\\Map\\";
 
@@ -410,14 +410,15 @@ int main()
 	/*terrainShader.Activate();
 	terrainShader.SetVec3("lightColor", lightColor);*/
 
-	/*Mesh Avion(PlanePath + "Plane.obj", PlanePath);
+	Mesh Avion(PlanePath + "Odyssey_OBJ.obj", PlanePath);
 	Avion.setPosition(glm::vec3(0.f));
 	Avion.setColor(0, glm::vec3(0.45f, 0.0f, 0.0f));
 	Avion.setColor(1, glm::vec3(0.1f, 0.1f, 0.1f));
 	Avion.setColor(2, glm::vec3(0.5f, 0.5f, 0.5f));
 	Avion.setRotation(glm::vec3(15.0f, 180.0f, 0.f));
 	Avion.setPosition(glm::vec3(0.0f, 1.8f, -1.5f));
-	Avion.initVAO();*/
+	Avion.setScale(glm::vec3(0.1f));
+	Avion.initVAO();
 
 	//Mesh Map(MapPath + "Map.obj", MapPath);
 	//Map.setScale(glm::vec3(0.1f, 0.1f, 0.1f));
@@ -530,7 +531,7 @@ int main()
 		Avion.setPosition(glm::vec3(Avion.getPosition() + glm::vec3(pCamera->speed * momentum * 15.f * glm::sin(glm::radians(Avion.getRotation().y)), 0.0f, pCamera->speed * momentum * 15.f * glm::cos(glm::radians(Avion.getRotation().y)))));
 		Avion.setRotation(glm::vec3(0.f, Avion.getRotation().y, 0.f) + glm::vec3(Xrot, 0.0f, Zrot));*/
 
-		//processInput(window, pCamera, deltaTime, &Avion);
+		processInput(window, pCamera, deltaTime, &Avion);
 		pCamera->SetPosition(glm::vec3(/*Avion.getPosition() +*/ glm::vec3(-sin(glm::radians(/*Avion.getRotation().y +*/ pCamera->offset)) * 50.f, 15.0f, -cos(glm::radians(/*Avion.getRotation().y*/ + pCamera->offset)) * 50.f)));
 		pCamera->SetPosition(pCamera->GetPosition() + glm::vec3(0.0f, glm::radians((pCamera->frontTilt - 13.f) / 1.5f) * 50.f, 0.0f));
 		pCamera->pitch = -pCamera->frontTilt;
@@ -541,14 +542,14 @@ int main()
 		glm::mat4 view = pCamera->GetViewMatrix();
 		pCamera->UpdateCameraVectors();
 
-		/*programShader.Activate();
+		programShader.Activate();
 		programShader.SetVec3("lightPos", lightPos);
 		programShader.SetVec3("lightColor", glm::vec3(0.6f));
 		programShader.SetVec3("viewPos", pCamera->GetPosition());
 
 		programShader.SetMat4("projection", projection);
-		programShader.SetMat4("view", view);*/
-		//Avion.render(&programShader);
+		programShader.SetMat4("view", view);
+		Avion.render(&programShader);
 
 		lampShader.Activate();
 		lampShader.SetMat4("projection", projection);
