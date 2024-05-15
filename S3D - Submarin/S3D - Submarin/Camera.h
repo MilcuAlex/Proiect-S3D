@@ -249,12 +249,14 @@ protected:
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 void processInput(GLFWwindow* window, Camera* pCamera, double deltaTime, Mesh* Player)
 {
+	float movement = 0.1f;
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, true);
 
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
 	{
 		UpPressed = true;
+		Player->setPosition(glm::vec3(0.0f + movement));
 	}
 	else
 	{

@@ -67,6 +67,9 @@ glm::vec3 lightPos = glm::vec3(3000.0f, 1000.0f, 8000.0f);
 //}
 
 //std::vector<Mesh> Aeroport;
+
+std::vector<Mesh> Environment;
+
 unsigned int GrassTex;
 unsigned int RoadTex;
 unsigned int RoofTex;
@@ -110,6 +113,11 @@ unsigned int skyboxIndices[] =
 	3, 7, 6,
 	6, 2, 3
 };
+
+void EnvironmentInit(std::string path) {
+
+}
+
 //
 //void AeroportInit(std::string path)
 //{
@@ -392,7 +400,7 @@ int main()
 	//std::string SkyBoxPath = currentPath + "\\Models\\Skybox\\";
 	std::string PlanePath = "..\\..\\Models\\Submarine_object\\";
 	//std::string AirportPath = currentPath + "\\Models\\Airport\\";
-	//std::string MapPath = currentPath + "\\Models\\Map\\";
+	std::string MapPath = "..\\..\\Models\\Map\\";
 
 
 	//Shaders
@@ -407,8 +415,8 @@ int main()
 	glm::vec4 lightColor = glm::vec4(0.6f, 0.6f, 0.6f, 1.0f);
 
 
-	/*terrainShader.Activate();
-	terrainShader.SetVec3("lightColor", lightColor);*/
+	terrainShader.Activate();
+	terrainShader.SetVec3("lightColor", lightColor);
 
 	Mesh Avion(PlanePath + "Odyssey_OBJ.obj", PlanePath);
 	Avion.setPosition(glm::vec3(0.f));
@@ -420,10 +428,10 @@ int main()
 	Avion.setScale(glm::vec3(0.1f));
 	Avion.initVAO();
 
-	//Mesh Map(MapPath + "Map.obj", MapPath);
-	//Map.setScale(glm::vec3(0.1f, 0.1f, 0.1f));
-	//Map.setPosition(glm::vec3(1000.0f, -165.0f, -80.0f));
-	//Map.initVAO();
+	Mesh Map(MapPath + "Map.obj", MapPath);
+	Map.setScale(glm::vec3(0.1f, 0.1f, 0.1f));
+	Map.setPosition(glm::vec3(1000.0f, -165.0f, -80.0f));
+	Map.initVAO();
 
 	// All the faces of the cubemap (make sure they are in this exact order)
 	std::vector<std::string> facesCubemap =
@@ -438,7 +446,7 @@ int main()
 
 	// Creates the cubemap texture object
 	unsigned int cubemapTexture = LoadSkybox(facesCubemap);
-	//int floorTexture = CreateTexture(MapPath + "Map.jpg");
+	int floorTexture = CreateTexture(MapPath + "Map.jpg");
 	//AeroportInit(AirportPath);
 
 	float deltaTime = 0.f;
@@ -570,12 +578,12 @@ int main()
 		airportShader.SetMat4("view", view);
 		AeroportRender(airportShader, programShader, terrainShader);*/
 
-		//terrainShader.Activate();
-		//terrainShader.SetMat4("projection", projection);
-		//terrainShader.SetMat4("view", view);
-		//glBindTexture(GL_TEXTURE_2D, floorTexture);
-		//Map.render(&terrainShader);
-		//glBindTexture(GL_TEXTURE_2D, 0);
+		terrainShader.Activate();
+		terrainShader.SetMat4("projection", projection);
+		terrainShader.SetMat4("view", view);
+		glBindTexture(GL_TEXTURE_2D, floorTexture);
+		Map.render(&terrainShader);
+		glBindTexture(GL_TEXTURE_2D, 0);
 
 		//render skybox
 		glDepthFunc(GL_LEQUAL);
