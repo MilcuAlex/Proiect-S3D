@@ -398,7 +398,7 @@ int main()
 	////Paths
 	//std::string ShadersPath = currentPath + "\\Shaders\\";
 	//std::string SkyBoxPath = currentPath + "\\Models\\Skybox\\";
-	std::string PlanePath = "..\\..\\Models\\Submarine_object\\";
+	std::string SubmarinePath = "..\\..\\Models\\submarine\\";
 	//std::string AirportPath = currentPath + "\\Models\\Airport\\";
 	std::string MapPath = "..\\..\\Models\\Map\\";
 
@@ -418,14 +418,13 @@ int main()
 	terrainShader.Activate();
 	terrainShader.SetVec3("lightColor", lightColor);
 
-	Mesh Avion(PlanePath + "Odyssey_OBJ.obj", PlanePath);
+	Mesh Avion(SubmarinePath + "submarine.obj", SubmarinePath);
 	Avion.setPosition(glm::vec3(0.f));
-	Avion.setColor(0, glm::vec3(0.45f, 0.0f, 0.0f));
-	Avion.setColor(1, glm::vec3(0.1f, 0.1f, 0.1f));
-	Avion.setColor(2, glm::vec3(0.5f, 0.5f, 0.5f));
-	Avion.setRotation(glm::vec3(15.0f, 180.0f, 0.f));
+	Avion.setColor(0, glm::vec3(1.0f, 0.0f, 0.0f));
+	//Avion.setColor(1, glm::vec3(0.1f, 0.1f, 0.1f));
+	//Avion.setColor(2, glm::vec3(0.5f, 0.5f, 0.5f));
 	Avion.setPosition(glm::vec3(0.0f, 1.8f, -1.5f));
-	Avion.setScale(glm::vec3(0.1f));
+	//Avion.setScale(glm::vec3(0.1f));
 	Avion.initVAO();
 
 	Mesh Map(MapPath + "Map.obj", MapPath);
@@ -447,6 +446,7 @@ int main()
 	// Creates the cubemap texture object
 	unsigned int cubemapTexture = LoadSkybox(facesCubemap);
 	int floorTexture = CreateTexture(MapPath + "Map.jpg");
+	int submarineTexture = CreateTexture(SubmarinePath + "Base_color.jpg");
 	//AeroportInit(AirportPath);
 
 	float deltaTime = 0.f;
@@ -552,11 +552,12 @@ int main()
 
 		programShader.Activate();
 		programShader.SetVec3("lightPos", lightPos);
-		programShader.SetVec3("lightColor", glm::vec3(0.6f));
+		programShader.SetVec3("lightColor", lightColor);
 		programShader.SetVec3("viewPos", pCamera->GetPosition());
 
 		programShader.SetMat4("projection", projection);
 		programShader.SetMat4("view", view);
+		glBindTexture(GL_TEXTURE_2D, submarineTexture);
 		Avion.render(&programShader);
 
 		lampShader.Activate();
