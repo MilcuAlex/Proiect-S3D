@@ -3,33 +3,9 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.3351
 C:\Users\milcu\Desktop\S3d\Proiect-S3D\S3D - Submarin\S3D - Submarin\LoaderMTL.cpp(26,8): warning C4101: 'value': unreferenced local variable
   (compiling source file 'S3D%20-%20Submarin.cpp')
   
-C:\Users\milcu\Desktop\S3d\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(279,23): warning C4305: '+=': truncation from 'double' to 'float'
-  (compiling source file 'S3D%20-%20Submarin.cpp')
-  
-C:\Users\milcu\Desktop\S3d\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(284,24): warning C4305: '+=': truncation from 'double' to 'float'
-  (compiling source file 'S3D%20-%20Submarin.cpp')
-  
-C:\Users\milcu\Desktop\S3d\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(290,23): warning C4305: '-=': truncation from 'double' to 'float'
-  (compiling source file 'S3D%20-%20Submarin.cpp')
-  
-C:\Users\milcu\Desktop\S3d\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(295,24): warning C4305: '-=': truncation from 'double' to 'float'
-  (compiling source file 'S3D%20-%20Submarin.cpp')
-  
-C:\Users\milcu\Desktop\S3d\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(310,23): warning C4305: '-=': truncation from 'double' to 'float'
-  (compiling source file 'S3D%20-%20Submarin.cpp')
-  
-C:\Users\milcu\Desktop\S3d\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(315,24): warning C4305: '-=': truncation from 'double' to 'float'
-  (compiling source file 'S3D%20-%20Submarin.cpp')
-  
-C:\Users\milcu\Desktop\S3d\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(321,23): warning C4305: '+=': truncation from 'double' to 'float'
-  (compiling source file 'S3D%20-%20Submarin.cpp')
-  
-C:\Users\milcu\Desktop\S3d\Proiect-S3D\S3D - Submarin\S3D - Submarin\Camera.h(326,24): warning C4305: '+=': truncation from 'double' to 'float'
-  (compiling source file 'S3D%20-%20Submarin.cpp')
-  
-C:\Users\milcu\Desktop\S3d\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(461,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\milcu\Desktop\S3d\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(462,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\milcu\Desktop\S3d\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(471,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\milcu\Desktop\S3d\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(302,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\milcu\Desktop\S3d\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(303,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\milcu\Desktop\S3d\Proiect-S3D\S3D - Submarin\S3D - Submarin\S3D - Submarin.cpp(312,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   S3D - Submarin.vcxproj -> C:\Users\milcu\Desktop\S3D\Proiect-S3D\S3D - Submarin\x64\Debug\S3D - Submarin.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
