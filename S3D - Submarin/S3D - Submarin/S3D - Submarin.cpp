@@ -1,4 +1,4 @@
-#include <Windows.h>
+﻿#include <Windows.h>
 #include <locale>
 #include <codecvt>
 #include <GL/glew.h>
@@ -65,6 +65,10 @@ bool leftpressed = false;
 bool rightpressed = false;
 bool UpPressed = false;
 bool DownPressed = false;
+bool SpacePressed = false;
+bool ShiftPressed = false;
+
+
 //bool cursor = true;
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
@@ -127,6 +131,24 @@ void processInput(GLFWwindow* window, Camera* pCamera, double deltaTime, Mesh* P
 	else
 	{
 		rightpressed = false;
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+	{
+		SpacePressed = true;
+	}
+	else
+	{
+		SpacePressed = false;
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
+	{
+		ShiftPressed = true;
+	}
+	else
+	{
+		ShiftPressed = false;
 	}
 }
 int main()
@@ -329,7 +351,11 @@ int main()
 
 		if (UpPressed)
 		{
-			Submarine.setPosition(glm::vec3(Submarine.getPosition().x, Submarine.getPosition().y, Submarine.getPosition().z + 0.2f));
+			Submarine.setPosition(Submarine.getPosition()+ glm::vec3(
+				0.4f * glm::sin(glm::radians(Submarine.getRotation().y)),
+				0.0f,
+				0.4f * glm::cos(glm::radians(Submarine.getRotation().y))
+			));
 			
 		}
 		if (leftpressed)
@@ -339,11 +365,23 @@ int main()
 		}
 		if (DownPressed)
 		{
-			Submarine.setPosition(glm::vec3(Submarine.getPosition().x, Submarine.getPosition().y, Submarine.getPosition().z - 0.2f));
+			Submarine.setPosition(Submarine.getPosition() - glm::vec3(
+				0.4f * glm::sin(glm::radians(Submarine.getRotation().y)),
+				0.0f,
+				0.4f * glm::cos(glm::radians(Submarine.getRotation().y))
+			));
 		}
 		if (rightpressed)
 		{
 			Submarine.setRotation(Submarine.getRotation() + glm::vec3(0.0f, -0.2f, 0.0f));
+		}
+		if (SpacePressed)
+		{
+			Submarine.setPosition(Submarine.getPosition() + glm::vec3(0.0f, 0.2f, 0.0f));
+		}
+		if (ShiftPressed)
+		{
+			Submarine.setPosition(Submarine.getPosition() + glm::vec3(0.0f, -0.2f, 0.0f));
 		}
 
 		lampShader.Activate();
