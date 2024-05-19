@@ -18,7 +18,10 @@ const unsigned int SCR_HEIGHT = 1000;
 float skylight;
 glm::vec3 lightPos = glm::vec3(3000.0f, 1000.0f, 8000.0f);
 
-std::vector<Mesh> Environment;
+std::vector<Mesh> UnderwaterEnvironment;
+
+unsigned int MossyRocksTex;
+unsigned int CoralTreeTex;
 
 float skyboxVertices[] =
 {
@@ -55,10 +58,94 @@ unsigned int skyboxIndices[] =
 	6, 2, 3
 };
 
-void EnvironmentInit(std::string path) {
+void UnderwaterEnvironmentInit(std::string path) {
+	Mesh mossyRocks(path + "MossyRocks.obj", path);
+	UnderwaterEnvironment.push_back(mossyRocks);
 
+	Mesh starFish(path + "StarFish.obj", path);
+	UnderwaterEnvironment.push_back(starFish);
+
+	Mesh coralTree(path + "CoralTree.obj", path);
+	UnderwaterEnvironment.push_back(coralTree);
+
+	Mesh coral(path + "Coral.obj", path);
+	UnderwaterEnvironment.push_back(coral);
+
+	//Mesh coral1(path + "Coral1.obj", path);
+	//UnderwaterEnvironment.push_back(coral1);
+
+	//Mesh coral2(path + "Coral2.obj", path);
+	//UnderwaterEnvironment.push_back(coral2);
+
+	//Mesh coral3(path + "Coral3.obj", path);
+	//UnderwaterEnvironment.push_back(coral3);
+
+	//Mesh coral4(path + "Coral4.obj", path);
+	//UnderwaterEnvironment.push_back(coral4);
+
+	//Mesh coral5(path + "Coral5.obj", path);
+	//UnderwaterEnvironment.push_back(coral5);
+	//
+	//Mesh coral6(path + "Coral6.obj", path);
+	//UnderwaterEnvironment.push_back(coral6);
+
+	for (int i = 0; i < UnderwaterEnvironment.size(); i++)
+	{
+		if (i == 0)
+		{
+			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -7.f, 10.f));
+		}
+		else if (i == 1) {
+			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -4.f, 10.f));
+		}
+		else if (i == 2) {
+			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -10.f, 10.f));
+		}
+		else if (i == 3) {
+			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -9.f, 10.f));
+		}
+		/*else if (i == 4) {
+			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -9.f, 10.f));
+		}
+		else if (i == 5) {
+			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -3.5f, 10.f));
+		}
+		else if (i == 6) {
+			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -4.8f, 10.f));
+		}
+		else if (i == 7) {
+			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -3.f, 10.f));
+		}
+		else if (i == 8) {
+			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -1.f, 10.f));
+		}
+		else if (i == 9) {
+			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -8.5f, 10.f));
+		}*/
+		UnderwaterEnvironment[i].setScale(glm::vec3(5.f));
+		UnderwaterEnvironment[i].initVAO();
+	}
+
+	MossyRocksTex = CreateTexture(path + "Textures\\MossyRocksTex.png");
+	CoralTreeTex = CreateTexture(path + "Textures\\CoralTreeTex.jpg");
+
+	//GrindaTex = CreateTexture(path + "Resources\\Shelter_simple_frame.bmp");
 }
 
+static void UnderwaterRender(Shader& shader1, Shader shader2) {
+	shader1.Activate();
+	glBindTexture(GL_TEXTURE_2D, MossyRocksTex);
+	UnderwaterEnvironment[0].render(&shader2);
+
+	shader2.Activate();
+	UnderwaterEnvironment[2].setScale(glm::vec3(0.5f));
+	glBindTexture(GL_TEXTURE_2D, CoralTreeTex);
+	UnderwaterEnvironment[1].render(&shader2);
+
+	for (int i = 0; i < UnderwaterEnvironment.size(); i++) {
+		UnderwaterEnvironment[i].render(&shader2);
+	}
+}
 
 Camera* pCamera = nullptr;
 bool leftpressed = false;
@@ -268,6 +355,7 @@ int main()
 
 	std::string SubmarinePath = "..\\..\\Models\\submarine\\";
 	std::string MapPath = "..\\..\\Models\\Map\\";
+	std::string UnderwaterPath = "..\\..\\Models\\Underwater_Objects\\";
 
 
 	//Shaders
@@ -310,7 +398,7 @@ int main()
 	unsigned int cubemapTexture = LoadSkybox(facesCubemap);
 	int floorTexture = CreateTexture(MapPath + "Map.jpg");
 	int submarineTexture = CreateTexture(SubmarinePath + "Base_color.jpg");
-	//AeroportInit(AirportPath);
+	UnderwaterEnvironmentInit(UnderwaterPath);
 
 	float deltaTime = 0.f;
 	float lastFrame = 0.f;
@@ -418,6 +506,8 @@ int main()
 		view = glm::mat4(glm::mat3(pCamera->GetViewMatrix()));
 		skyboxShader.SetMat4("projection", projection);
 		skyboxShader.SetMat4("view", view);
+
+		UnderwaterRender(programShader, terrainShader);
 
 		glUniformMatrix4fv(glGetUniformLocation(skyboxShader.ID, "view"), 1, GL_FALSE, glm::value_ptr(view));
 		glUniformMatrix4fv(glGetUniformLocation(skyboxShader.ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
