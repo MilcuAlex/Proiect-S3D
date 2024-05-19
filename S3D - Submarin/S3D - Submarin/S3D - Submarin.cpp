@@ -499,6 +499,8 @@ int main()
 		Map.render(&terrainShader);
 		glBindTexture(GL_TEXTURE_2D, 0);
 
+		UnderwaterRender(programShader, terrainShader);
+
 		//render skybox
 		glDepthFunc(GL_LEQUAL);
 		skyboxShader.Activate();
@@ -507,7 +509,6 @@ int main()
 		skyboxShader.SetMat4("projection", projection);
 		skyboxShader.SetMat4("view", view);
 
-		UnderwaterRender(programShader, terrainShader);
 
 		glUniformMatrix4fv(glGetUniformLocation(skyboxShader.ID, "view"), 1, GL_FALSE, glm::value_ptr(view));
 		glUniformMatrix4fv(glGetUniformLocation(skyboxShader.ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
