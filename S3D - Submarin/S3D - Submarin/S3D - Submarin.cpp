@@ -65,14 +65,14 @@ void UnderwaterEnvironmentInit(std::string path) {
 	Mesh starFish(path + "StarFish.obj", path);
 	UnderwaterEnvironment.push_back(starFish);
 
-	Mesh coralTree(path + "CoralTree.obj", path);
-	UnderwaterEnvironment.push_back(coralTree);
+	Mesh coralTree1(path + "CoralTree.obj", path);
+	UnderwaterEnvironment.push_back(coralTree1);
 
 	Mesh coral(path + "Coral.obj", path);
 	UnderwaterEnvironment.push_back(coral);
 
-	//Mesh coral1(path + "Coral1.obj", path);
-	//UnderwaterEnvironment.push_back(coral1);
+	Mesh clownFish(path + "ClownFish.obj", path);
+	UnderwaterEnvironment.push_back(clownFish);
 
 	//Mesh coral2(path + "Coral2.obj", path);
 	//UnderwaterEnvironment.push_back(coral2);
@@ -93,20 +93,21 @@ void UnderwaterEnvironmentInit(std::string path) {
 	{
 		if (i == 0)
 		{
-			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -7.f, 10.f));
+			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -10.f, 10.f));
 		}
 		else if (i == 1) {
-			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -4.f, 10.f));
+			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, 0.f, 10.f));
 		}
 		else if (i == 2) {
 			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -10.f, 10.f));
 		}
 		else if (i == 3) {
-			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -9.f, 10.f));
+			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, 0.f, 10.f));
 		}
-		/*else if (i == 4) {
-			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -9.f, 10.f));
+		else if (i == 4) {
+			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -10.f, 10.f));
 		}
+		/*
 		else if (i == 5) {
 			UnderwaterEnvironment[i].setPosition(glm::vec3(10.f, -3.5f, 10.f));
 		}
@@ -138,11 +139,11 @@ static void UnderwaterRender(Shader& shader1, Shader shader2) {
 	UnderwaterEnvironment[0].render(&shader2);
 
 	shader2.Activate();
+	UnderwaterEnvironment[1].setScale(glm::vec3(1.f));
 	UnderwaterEnvironment[2].setScale(glm::vec3(0.5f));
 	glBindTexture(GL_TEXTURE_2D, CoralTreeTex);
-	UnderwaterEnvironment[1].render(&shader2);
 
-	for (int i = 0; i < UnderwaterEnvironment.size(); i++) {
+	for (int i = 1; i < UnderwaterEnvironment.size(); i++) {
 		UnderwaterEnvironment[i].render(&shader2);
 	}
 }
